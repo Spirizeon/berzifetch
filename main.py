@@ -1,6 +1,14 @@
 import subprocess
 import os
-
+class Color:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    MAGENTA = '\033[95m'
+    CYAN = '\033[96m'
+    WHITE = '\033[97m'
+    RESET = '\033[0m'
 
 def command(caption, arg):
     output = subprocess.run(arg, capture_output=True, text=True).stdout
@@ -16,10 +24,12 @@ for line in lines:
         break
 
 # ASCII art
-
+print(Color.CYAN)
 os.system(f"pyfiglet -f slant {os_art}")
+print(Color.RESET)
 print(f"├────────────────")
 
+print(Color.YELLOW)
 # OS stats
 print(f" Distro: {os_name}")
 
@@ -61,5 +71,5 @@ DE_dump = os.getenv('XDG_CURRENT_DESKTOP')
 DE = DE_dump.split(':')
 DE = DE[1]
 print(f" DE/WM: {DE}")
-
+print(Color.RESET)
 print(f"├────────────────")
