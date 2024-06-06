@@ -13,5 +13,6 @@
 git clone https://github.com/spirizeon/berzifetch
 cd berzifetch
 pip install -r requirements.txt
-echo "python3 ~/berzifetch/main.py" >> ~/.bashrc
+chmod +x ./main
+echo "~/berzifetch/main" >> ~/.bashrc
 ```

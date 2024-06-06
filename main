@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import subprocess
 import os
 class Color:
@@ -33,8 +34,8 @@ print(Color.YELLOW)
 # OS stats
 print(f" Distro: {os_name}")
 
-command(f" USER", "whoami")
-command(f" HOST", "hostname")
+command(f" USER", "whoami")
+command(f" HOST", "hostname")
 command(f" KERNEL", ["uname", "-sr"])
 
 # CPU stats
