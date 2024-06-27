@@ -3,16 +3,11 @@
 
 > Since neofetch has been deprecated, i decided to write a simple python script to replace it.
 
-### What you need before installing:
-1. Linux
-2. Python3.x
-3. Sanity (lol)
+POSIX-compliant system fetch, that is minimal, fast and detailed.
 
 ## Setup
 ```
 git clone https://github.com/spirizeon/berzifetch
 cd berzifetch
-pip install -r requirements.txt
-chmod +x ./main
 echo "~/berzifetch/main" >> ~/.bashrc
 ```
