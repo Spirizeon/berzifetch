@@ -1,9 +1,10 @@
 # berzifetch
-![image](https://github.com/Spirizeon/berzifetch/assets/123345456/f4f326a5-0175-472b-8cdc-898249a72624)
+![image](https://github.com/Spirizeon/berzifetch/assets/123345456/5b32fcab-678e-43e0-a27f-517db85ecbfc)
 
+## POSIX-compliant system fetch, that is minimal, fast and detailed.
 > Since neofetch has been deprecated, i decided to write a simple python script to replace it.
 
-POSIX-compliant system fetch, that is minimal, fast and detailed.
+
 
 ## Setup
 ```
