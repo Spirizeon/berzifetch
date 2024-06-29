@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+// ANSI color codes
+#define BLUE "\033[1;34m"
+#define CYAN "\033[1;36m"
+#define GREEN "\033[0;32m"
+#define WHITE "\033[1;37m"
+#define YELLOW "\033[1;33m"
+#define LIGHT_RED "\033[1;31m"
+#define LIGHT_MAGENTA "\033[1;35m"
+#define LIGHT_GRAY "\033[0;37m"
+#define RESET "\033[0m"
+
 // Function to print the ASCII art of a given Linux distribution name
 void printAsciiArt(const char *distroName) {
 
@@ -99,26 +110,32 @@ char *read_distro_name(){
 
 
 int main(){
+
     struct utsname uname_pointer;
-	uname(&uname_pointer);                   ;
-	//printAsciiArt();
+    uname(&uname_pointer);
     char *distro_name = read_distro_name();
     char *username = getenv("USER");
     char *shell_name = getenv("SHELL");
     char *cpu_name = cpu_stat();
-    printAsciiArt(distro_name);
-    printf("\n├────────────────\n\n");
-    printf(" DISTRO: %s",distro_name);
-    printf(" USER: %s\n",username);
-    printf(" HOST: %s\n", uname_pointer.nodename);
-    printf(" KERNEL: %s\n", uname_pointer.release);
-    printf("# SHELL: %s\n",shell_name);
-    char *de = getenv("XDG_CURRENT_DESKTOP");
-    printf(" DE/WM: %s\n", de);
-    printf("󰍛 CPU: %s",cpu_name);
-    //printf("󰍹 GPU: %s",cpu_name);
 
-    printf("\n├────────────────\n");
-    printf("> berzifetch - built by spirizeon\n");
+    printf(CYAN);
+    printAsciiArt(distro_name);
+    printf(RESET);
+
+    printf(LIGHT_GRAY "\n├────────────────\n\n" RESET);
+
+    printf(GREEN "   DISTRO: " WHITE "%s" RESET, distro_name);
+    printf(GREEN "   USER: " WHITE "%s\n" RESET, username);
+    printf(GREEN "   HOST: " WHITE "%s\n" RESET, uname_pointer.nodename);
+    printf(GREEN "   KERNEL: " WHITE "%s\n" RESET, uname_pointer.release);
+    printf(YELLOW " # " GREEN " SHELL: " WHITE "%s\n" RESET, shell_name);
+
+    char *de = getenv("XDG_CURRENT_DESKTOP");
+    printf(GREEN "   DE/WM: " WHITE "%s\n" RESET, de);
+    printf(LIGHT_RED " 󰍛 " GREEN " CPU: " WHITE "%s" RESET, cpu_name);
+
+    printf(LIGHT_GRAY "\n├────────────────\n" RESET);
+    printf(LIGHT_MAGENTA "> berzifetch - built by spirizeon\n" RESET);
+
     return 0;
 }
